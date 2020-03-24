@@ -7,32 +7,55 @@ using namespace std;
 
 int main()
 {
-	vector<int> v;
-	vector<int> v2;
-	for (int i = 0; i < 8; i++)
+	while (1)
 	{
-		int num;
-		cin >> num;
-		v.push_back(num);
-	}
-	for (int i = 0; i < v.size(); i++)
-		for(int j=0;j<v.size();j++)
-	{
+		vector<int> v;
+		for (int i = 0; i < 8; i++)
+		{
+			int num;
+			cin >> num;
+			v.push_back(num);
+		}
+		for (int i = 0; i < v.size(); i++)
+		{
 			if (i % 2 == 0)
 			{
-				v2[j] = v[i] - 30;
+				v[i] = v[i] - 30;
 			}
 			else
 			{
-				v2[j] = v[i] + 30;
+				v[i] = v[i] + 30;
 			}
-			
-	}
-	vector<int> v3;
-	for (int i = 0; i < v2.size; i++)
-		for(int j=i+1;j<v2.size();j++)
-	{
-			if(v2[i])
+		}
+		int j = 1;
+		int k = j + 1;
+		vector<int> v2;
+		v2.push_back(v[0]);
+		while (j < v.size() && k < v.size())
+		{
+			if (j < v.size() && k < v.size() && v[k] - v[j] > 60)
+			{
+				v2.push_back(v[j]);
+				v2.push_back(v[k]);
+				j += 2;
+				k += 2;
+			}
+			else if (j > v.size() || k > v.size())
+			{
+				break;
+			}
+			else
+			{
+				j += 2;
+				k += 2;
+			}
+		}
+		v2.push_back(v[v.size() - 1]);
+		for (int i = 0; i < v2.size(); i++)
+		{
+			cout << v2[i] << " ";
+		}
+		cout << endl;
 	}
 	system("pause");
 	return 0;

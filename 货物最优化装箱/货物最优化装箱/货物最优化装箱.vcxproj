@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="单链表.cpp" />
     <ClCompile Include="单链表环的长度.cpp" />
     <ClCompile Include="货物最优化装箱.cpp" />
   </ItemGroup>
