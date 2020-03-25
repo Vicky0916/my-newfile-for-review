@@ -1,0 +1,5 @@
+﻿  main.cpp
+d:\export\my-newfile-for-review\顺序表\顺序表\main.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\顺序表\顺序表\main.cpp(72): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\顺序表\顺序表\main.cpp(84): warning C4018: “<”: 有符号/无符号不匹配
+  顺序表.vcxproj -> D:\Export\my-newfile-for-review\顺序表\Debug\顺序表.exe
