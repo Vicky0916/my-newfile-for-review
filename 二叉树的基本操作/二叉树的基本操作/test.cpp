@@ -246,10 +246,30 @@ int TreeDeepTh(TreeNode* root)
 
 //判断一棵树是否为平衡二叉树:平衡二叉树是指：它是一颗空树
 //或者左右子树的高度差不超过1，并且左右子树都是一颗平衡二叉树
-bool IsbalancedRtree(TreeNode * root)
+bool Isbalanced(TreeNode * root,int &Deepth)
 {
-	
+	if (!root)
+	{
+		Deepth = 0;
+		return true;
+	}
+	int left_depth, right_depth;
+	if (Isbalanced(root->left, left_depth) && Isbalanced(root->right, right_depth))
+	{
+		int diff = left_depth - right_depth;
+		if (diff <= 1 && diff >= -1)
+		{
+			Deepth = 1 + ((left_depth > right_depth) ? left_depth : right_depth);
+			return true;
+		}
+	}
+	return false;
 
+}
+bool IsBlancedTree(TreeNode* root)
+{
+	int Deepth = 0;
+	return Isbalanced(root, Deepth);
 }
 
 
