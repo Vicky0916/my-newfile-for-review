@@ -70,7 +70,7 @@ void dfs(vector<vector<int>>& res, int start, vector<int>& nums, vector<int> &v)
 	for (int i = start; i < nums.size(); i++)
 	{
 		v.push_back(nums[i]);
-		dfs(res, start + 1, nums, v);
+ 		dfs(res, start + 1, nums, v);
 		v.pop_back();
 	}
 }
