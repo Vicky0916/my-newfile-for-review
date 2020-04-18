@@ -1,25 +1,88 @@
-#include <iostream>
-#include <stdlib.h>
-#include <string>
-using namespace std;
+//#include <iostream>
+//#include <stdlib.h>
+//#include <string>
+//using namespace std;
 
-class person
+//class A
+//{
+//public:
+//	void test(int i);
+//	void test(double i); //重载
+//	void test(int i, double j); //重载
+//	int test(int i); //不是重载，因为重载不关心返回值类型
+//};
+
+//class A
+//{
+//public:
+//	void fun(double, int)
+//	{
+//		cout << "父类：fun(double,int)" << endl;
+//	}
+//};
+//class B:public  A
+//{
+//public:
+//	void fun(int)
+//	{
+//		cout << "子类：fun(int)" << endl;
+//	}
+//};
+//int main()
+//{
+//	B b;
+//	b.fun(1);
+//	b.fun(10.1, 1);  //错误，函数不接受两个形参
+//	system("pause");
+//	return 0;
+//}
+
+class A
 {
 public:
-	friend void display(const person&p, const student&s);
-private:
-	string name;
+	virtual void fun(int i)
+	{
+		cout << "基类：fun()" << endl;
+	}
 };
-class student :public person
+class B :public A
 {
-protected:
-	int sno;
+public:
+	virtual void fun(int i)
+	{
+		cout << "派生类：fun()" << endl;
+	}
 };
-void display(const person&p, const student&s)
+int main()
 {
-	cout << p.name << endl;//基类友元不能访问子类私有和保护成员
-	cout << s.sno << endl;
+	A a;
+	A* a1 = new B();
+	a1->fun(3);  //输出：派生类：fun();
+	system("pause");
+	return 0;
 }
+//class person
+//{
+//public:
+//	friend void display(const person&p, const student&s);
+//	friend void function(person p);
+//private:
+//	string name;
+//};
+//class student :public person
+//{
+//protected:
+//	int sno;
+//};
+//void display( const person&p, const student&s)
+//{
+//	cout << p.name << endl;//报错了，基类友元不能访问子类私有和保护成员
+//	cout << s.sno << endl;  //报错
+//}
+//void function(person p)  //因为function声明为person的友元，所以可以访问类中的所有成员
+//{
+//	cout << p.name << endl;
+//}
 //class person
 //{
 //protected:
