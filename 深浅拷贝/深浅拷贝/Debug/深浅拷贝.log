@@ -1,2 +1,4 @@
 ﻿  test.cpp
+d:\export\my-newfile-for-review\深浅拷贝\深浅拷贝\test.cpp(164): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+d:\export\my-newfile-for-review\深浅拷贝\深浅拷贝\test.cpp(186): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
   深浅拷贝.vcxproj -> D:\Export\my-newfile-for-review\深浅拷贝\Debug\深浅拷贝.exe

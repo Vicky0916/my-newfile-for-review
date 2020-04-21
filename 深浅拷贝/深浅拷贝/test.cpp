@@ -105,45 +105,96 @@ using namespace std;
 //}
 
 //写时拷贝的写法1
-class String
-{
-public:
-	String(const char* str) //构造函数 
-		:_str(new char[strlen(str)+1]), _refCount(new int(1))
-	{
-		strcpy(_str, str);
-	}
-	String(const String& s)  //拷贝构造
-		:_str(s._str),_refCount(s._refCount)
-	{
-		++_refCount[0];
-	}
-	String& operator=(const String& s)
-	{
-		if (this != &s)
-		{
-			if (--_refCount[0] == 0) //旧的计数减1，如果是最后一个引用对象则释放对象
-			{
-				delete[] _str;
-				delete[] _refCount;
-			}
-			//如果不是最后一个引用对象
-			_str = s._str;
-			_refCount = s._refCount;
-			++_refCount[0];
-		}
-		return *this;
+//class String
+//{
+//public:
+//	String(const char* str) //构造函数 
+//		:_str(new char[strlen(str)+1]), _refCount(new int(1))
+//	{
+//		strcpy(_str, str);
+//	}
+//	String(const String& s)  //拷贝构造
+//		:_str(s._str),_refCount(s._refCount)
+//	{
+//		++_refCount[0];
+//	}
+//	String& operator=(const String& s)
+//	{
+//		if (this != &s)
+//		{
+//			if (--_refCount[0] == 0) //旧的计数减1，如果是最后一个引用对象则释放对象
+//			{
+//				delete[] _str;
+//				delete[] _refCount;
+//			}
+//			//如果不是最后一个引用对象
+//			_str = s._str;
+//			_refCount = s._refCount;
+//			++_refCount[0];
+//		}
+//		return *this;
+//
+//	}
+//private:
+//	char* _str;
+//	int* _refCount;
+//};
+//int main()
+//{
+//	String s1("hello");
+//	String s2(s1);
+//	String s3 ("world");
+//	system("pause");
+//	return 0;
+//}
 
+	int StrToInt(string str)
+	{
+		long long res = 0;
+		int flag = 0;
+		int n = 0;
+		if (str == "")
+			return 0;
+		for (int i = str.size() - 1; i > 0; i--)
+		{
+			if (!(str[i] >= '0'&&str[i] <= '9'))
+				return 0;
+			else
+			{
+				res += ((str[i] - '0')*pow(10, n));
+				n++;
+			}
+		}
+		if (str[0] == '+')
+		{
+			flag = 1;
+			if (res*flag > INT_MAX)
+				return 0;
+			else
+				return res;
+		}
+		else if (str[0] == '-')
+		{
+			flag = -1;
+			if (res*flag < INT_MIN)
+				return 0;
+			else
+				return res * flag;
+		}
+		else if (str[0] >= '0'&&str[0] <= '9')
+		{
+			res += ((str[0] - '0')*pow(10, n));
+			if (res < INT_MAX)
+				return res;
+			else
+				return 0;
+		}
+		else
+			return 0;
 	}
-private:
-	char* _str;
-	int* _refCount;
-};
-int main()
+	int main()
 {
-	String s1("hello");
-	String s2(s1);
-	String s3 ("world");
-	system("pause");
-	return 0;
+		int res = StrToInt("-2147483649");
+		system("pause");
+		return 0;
 }
