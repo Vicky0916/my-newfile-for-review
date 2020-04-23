@@ -1,0 +1,11 @@
+﻿  main.cpp
+d:\export\my-newfile-for-review\美团\美团\main.cpp(84): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\美团\美团\main.cpp(104): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\美团\美团\main.cpp(107): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\美团\美团\main.cpp(113): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\美团\美团\main.cpp(114): warning C4018: “<”: 有符号/无符号不匹配
+d:\export\my-newfile-for-review\美团\美团\main.cpp(116): warning C4554: “&”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
+d:\export\my-newfile-for-review\美团\美团\main.cpp(119): warning C4018: “<”: 有符号/无符号不匹配
+  二进制的转化.cpp
+  正在生成代码...
+  美团.vcxproj -> D:\Export\my-newfile-for-review\美团\Debug\美团.exe
