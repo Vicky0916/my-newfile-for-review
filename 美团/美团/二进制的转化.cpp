@@ -1,7 +1,7 @@
-//#include <iostream>
-//#include <stdlib.h>
-//#include <vector>
-//using namespace std;
+////#include <iostream>
+////#include <stdlib.h>
+////#include <vector>
+////using namespace std;
 //int main()
 //{
 //	while (1)
@@ -17,6 +17,21 @@
 //			v.push_back(m);
 //		}
 //	}
+//	system("pause");
+//	return 0;
+//}
+//#include <iostream>
+//#include <stdlib.h>
+//#include <vector>
+//using namespace std;
+//int main()
+//{
+//	int n;
+//	cin >> n;
+//	n=(n>>0)&1;
+//	cout << n << endl;
+//	n= (n >> 1) & 1;
+//	cout << n << endl;
 //	system("pause");
 //	return 0;
 //}
