@@ -51,31 +51,72 @@ void insertSort(int *a, int begin, int end)
 //}
 
 //挖坑法的快排
-void partSort(int* arr, int left, int right)
+//void partSort(int* arr, int left, int right)
+//{
+//	if (left < right)
+//	{
+//		int begin = left;
+//		int end = right;
+//		int temp = arr[end];  //三数取中
+//
+//		while (begin != end)
+//		{
+//			while (begin < end&&arr[begin] <= temp)
+//				begin++;
+//			if (begin < end)
+//				arr[end] = arr[begin];  //begin成为新坑 
+//			while (begin < end&&arr[end] >= temp)
+//				end--;
+//			if (begin < end)
+//				arr[begin] = arr[end];
+//		}
+// 		arr[begin] = temp;
+//		partSort(arr, left, begin-1);
+//		partSort(arr, begin + 1, right);
+//	}
+//	
+//}
+////前后指针法
+//void PartSort3(int* a, int begin, int end)
+//{
+//	if (begin <= end)
+//	{
+//		int temp = a[end];
+//		int cur = begin;
+//		int prev = begin - 1;
+//		while (cur < end)
+//		{
+//			if (a[cur] < temp&&++prev != cur)
+//			{
+//				swap(a[cur], a[prev]);
+//			}
+//			++cur;
+//		}
+//		prev++;
+//		swap(a[cur], a[prev]);
+//		PartSort3(a, begin, prev - 1);
+//		PartSort3(a, prev+1, end);
+//	}
+//}
+void QuickSort(int* a, int begin, int end)
 {
-	if (left < right)
+	if (begin < end)
 	{
-		int begin = left;
-		int end = right;
-		int temp = arr[end];  //三数取中
-
-		while (begin != end)
+		int left = begin;
+		int right = end;
+		int temp = a[left];
+		while (left != right)
 		{
-
-			while (begin < end&&arr[begin] <= temp)
-				begin++;
-			if (begin < end)
-				arr[end] = arr[begin];  //begin成为新坑 
-			while (begin < end&&arr[end] >= temp)
-				end--;
-			if (begin < end)
-				arr[begin] = arr[end];
+			while (left < right&&a[right] >= temp)
+				right--;
+			while (left < right&&a[left] <= temp)
+				left++;
+			swap(a[left], a[right]); 
 		}
- 		arr[begin] = temp;
-		partSort(arr, left, begin-1);
-		partSort(arr, begin + 1, right);
+		swap(a[left], a[begin]);
+		QuickSort(a, begin, left-1);
+		QuickSort(a, left + 1, end);
 	}
-	
 }
 void print(int* a)
 {
@@ -87,11 +128,15 @@ void print(int* a)
 }
 int main()
 {
-	int a[6] = { 2,5,1,6,8,0 };
+	int a[6] = { 9,5,7,6,8,0 };
 	//insertSort(a, 0, 6);
 	//print(a);
-	cout << "挖坑法的快速排序:" << endl;
-	partSort(a, 0, 5);
+	/*cout << "挖坑法的快速排序:" << endl;
+	partSort(a, 0, 5);*/
+	/*cout << "前后指针法：" << endl;*/
+	cout << "左右指针法：" << endl;
+	QuickSort(a, 0, 5);
+
 	print(a);
 	system("pause");
 	return 0;
