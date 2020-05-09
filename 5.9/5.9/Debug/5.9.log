@@ -1,0 +1,3 @@
+﻿  test.cpp
+d:\export\my-newfile-for-review\5.9\5.9\test.cpp(9): warning C4018: “<”: 有符号/无符号不匹配
+  5.9.vcxproj -> D:\Export\my-newfile-for-review\5.9\Debug\5.9.exe
