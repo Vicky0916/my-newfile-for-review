@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\export\practice1\字符串逆置\字符串逆置\test.cpp(61): warning C4305: “初始化”: 从“int”到“short”截断
+d:\export\practice1\字符串逆置\字符串逆置\test.cpp(61): warning C4309: “初始化”: 截断常量值
+  字符串逆置.vcxproj -> D:\Export\Practice1\字符串逆置\Debug\字符串逆置.exe
